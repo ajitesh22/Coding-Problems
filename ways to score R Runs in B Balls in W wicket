@@ -20,7 +20,6 @@ int solve(int r,int b,int w){
     if(r>R)return 0;
     if(b>B)return 0;
     if(r==R && b==B)return 1;
-    string key = to_string(r) +":"+ to_string(b)+":"+to_string(w);
     if(dp[r][b][w]!=-1)
         return dp[r][b][w];
     int score0 = solve(r,b+1,w);
