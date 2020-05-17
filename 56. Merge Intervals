@@ -1,0 +1,46 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        map<int,int>map;
+        for(auto interval : intervals){
+            map[interval[0]]++;
+            map[interval[1]]--;
+        }
+        vector<vector<int>>ans;
+        int count = 0,s=-1,e;
+        for(auto i : map){
+            if(s==-1)
+                s=i.first;
+            count+=i.second;
+            if(count==0){
+               e=i.first;
+               ans.push_back({s,e});
+               s=-1; 
+            }
+        }
+        return ans;
+    }
+};
+
+
+
+
+/*
+
+
+    1  2. 3. 4. 5. 6. 7. 8. 9. 10  11. 12. 13  14  15  16  17  18
+    1  1 -1       -1     1     -1                   1          -1
+
+    1,6
+    8,10
+    15,18
+
+    work  if n<=10**5
+    O(max range)
+    
+    Use HaspMap instead of array
+
+
+
+
+*/
