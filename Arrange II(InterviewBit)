@@ -1,0 +1,32 @@
+int ans;
+int dp[1000][1000];
+
+int Solution::arrange(string s, int k) {
+   memset(dp,-1,sizeof(dp[0][0])*1000*1000);
+   int n=s.size(),WC=0,BC=0;
+   if(k>n)return -1;
+   dp[0][0]=0; 
+   for(int i=1;i<=n;i++){
+       if(s[i-1]=='W')
+            WC++;
+       else
+           BC++;
+       dp[0][i] = WC*BC;
+   }        
+   for(int i=1;i<=k;i++){
+       for(int j=1;j<=n;j++){
+           WC=0;BC=0;
+           for(int x=j;x>0;x--){
+               if(s[x-1]=='W')WC++;
+               else BC++;
+               if(dp[i-1][x-1]==-1)continue;
+               if(dp[i][j]==-1)
+                    dp[i][j] = dp[i-1][x-1] +  WC*BC;
+               else
+                    dp[i][j] = min(dp[i][j], dp[i-1][x-1] + WC*BC);
+           }
+           
+       }
+   }
+    return dp[k-1][n];
+}
