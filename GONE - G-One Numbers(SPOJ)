@@ -1,0 +1,69 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+ 
+ll dp[10][73][2];
+int isPrime[73];
+vector<int>num;
+
+int checkIfPrime(int n){
+    for(int i=2;i<n;i++)
+        if(n%i==0)return 0;
+    return 1;
+}
+void CalisPrime(){
+    isPrime[2]=1;
+    for(int i=3;i<=72;i++){
+        isPrime[i]=checkIfPrime(i);
+    }
+}
+ll solve(int index,ll sum,int tight){
+    
+    if(index==num.size())
+        return isPrime[sum];
+ 
+    int limit = 9;
+    if(tight)limit = num[index];
+ 
+    ll ans = 0;
+    if(dp[index][sum][tight]!=-1)
+        return dp[index][sum][tight];
+        
+    for(int i=0;i<=limit;i++){
+        if(!tight || i<limit)
+            ans+=solve(index+1,sum+i,0);
+        else 
+            ans+=solve(index+1,sum+i,1);
+    }
+    return dp[index][sum][tight]=ans;
+}
+ 
+void numToArray(ll n){
+    num.clear();
+    while(n>0){
+        num.push_back(n%10);
+        n/=10;
+    }
+    reverse(num.begin(),num.end());
+}
+ 
+int main(){
+    
+    ll a,b,t;
+    cin>>t;
+    memset(isPrime,0,sizeof(isPrime));
+    CalisPrime();
+    while(t--){
+        cin>>a>>b;
+        ll suma , sumb;
+        memset(dp,-1,sizeof(dp));
+        numToArray(a-1);
+        suma=solve(0,0,1);
+        memset(dp,-1,sizeof(dp));
+        numToArray(b);
+        sumb=solve(0,0,1);
+        cout<<sumb-suma<<endl;
+        
+    }
+    return 0;
+} 
