@@ -6,7 +6,7 @@ Since the answer can be large, output answer modulo 1000000007
 Problem Constraints
 1 <= A <= 1000 1 <= B <= 10000  
 */
-
+#define MOD 1000000007
 int dp[1002][10002];
 int n,reqSum;
 int solve1(int index,long long int sum){
