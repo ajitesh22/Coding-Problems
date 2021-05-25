@@ -5,16 +5,17 @@ public:
     
     void solve(int k , int n ,int idx ,vector<int>currList , vector<vector<int>> &finalList){
         
-        if((k==0 && n>0) || (k!=0 && n<=0) || idx>9)
-            return ;
-        
         if(k==0 && n==0){
             finalList.push_back(currList);
             return;
         }
+        if(k<0|| n<0 || idx>9)
+            return ;
+          
             currList.push_back(idx);
             solve(k-1, n-idx, idx + 1 , currList , finalList);
             currList.pop_back();
+            solve(k, n, idx + 1 , currList , finalList);
 
     }    
     
