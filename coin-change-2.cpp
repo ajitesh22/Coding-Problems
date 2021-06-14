@@ -3,7 +3,7 @@
 class Solution {
 public:
     
-    /*int dp[5001][3001];
+    int dp[5001][3001];
     int CoinChangeIITopDown(int n, vector<int>& coins ,int idx , int count) {
         
         if(n==0)
@@ -22,7 +22,7 @@ public:
         
         return dp[n][idx] = count;    
         
-    }*/
+    }
     
     
     int CoinChangeIIBottomUp(int sum , vector<int>& coins){
