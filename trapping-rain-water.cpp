@@ -18,8 +18,6 @@ public:
         rmax[i]=(rmax[i+1]>=A[i])?rmax[i+1]:A[i];
         
     }
-   // for(int i=0;i<n;i++)cout<<lmax[i]<<" ";cout<<endl;
-    //for(int i=0;i<n;i++)cout<<rmax[i]<<" ";
     int sum=0;
     for(int i=0;i<n;i++){
        // cout<<((lmax[i]>=rmax[i])?rmax[i]:lmax[i])-A[i]<<" ";
