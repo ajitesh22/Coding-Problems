@@ -14,7 +14,6 @@ public:
     }
     
     bool stoneGame(vector<int>& piles) {
-      
         memset(dp,-1,sizeof dp);
         int sum = 0;
         for(int pile :piles)sum+=pile;
