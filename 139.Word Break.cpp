@@ -30,6 +30,6 @@ public:
                 if (wordBreak(s.substr(index),wordDict))
                     return true;
         }
-        return false;    
+        return false;     
     }*/
 };
