@@ -39,6 +39,5 @@ public:
         if(index==-1)
             return "";
         return  s.substr(index , minLength);
-        
     }
 };
