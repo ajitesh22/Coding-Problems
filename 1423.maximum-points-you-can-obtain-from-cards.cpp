@@ -62,7 +62,7 @@ public:
                 windowSum+=cardPoints[j];
              i++;
          }
-             
+          
          return ans;
     }
 };
