@@ -38,5 +38,5 @@ int main() {
     R=40,B=10,W=4;
     int x=solve(0,0,0);
     cout<<x;
-	return 0;
+	return 0; 
 }
