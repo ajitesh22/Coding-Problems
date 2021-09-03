@@ -7,7 +7,6 @@ Return the minimum cuts needed for a palindrome partitioning of A.
 
 */
 
-
 int Solution::minCut(string A) {
    
    int n=A.size();
