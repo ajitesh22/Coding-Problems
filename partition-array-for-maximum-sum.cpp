@@ -19,7 +19,7 @@ public:
                 ans = max(ans , i*maxVal + solve(arr , k , idx + i));
             }
         }
-        
+    
         return dp[idx] = ans;
         
     }
