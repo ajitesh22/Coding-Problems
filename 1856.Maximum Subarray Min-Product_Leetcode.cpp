@@ -56,7 +56,6 @@ public:
             maxprod = max(maxprod , ((s*nums[i])));
             
         }
-        return (int)(maxprod%mod);
-        
+        return (int)(maxprod%mod); 
     }
 };
