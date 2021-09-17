@@ -15,7 +15,6 @@ public:
                             flips++;
                         l++;
                     }
-                ans = max(ans , r - l +1); 
             }
             if(flips>=0)
                 ans = max(ans , r - l +1);   
