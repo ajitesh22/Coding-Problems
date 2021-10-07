@@ -21,6 +21,7 @@ public:
             dp[i][i] = 0;
         }
 
+        
        for(int s = 1; s < n ; s++){
         for( int i = 0 ; i < n - s ; i++){
             int  j = i + s;
