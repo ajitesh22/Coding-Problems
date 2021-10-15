@@ -2,7 +2,7 @@
 class Solution {
 public:
     int mctFromLeafValues(vector<int>& arr) {
-        
+      
         int n=arr.size();
         int maxElement[n][n];
         
