@@ -41,9 +41,6 @@ public:
         
         solve(root , x ,y , 0, root);
         return xparent!=yparent && xdepth == ydepth;
-        
-        
-        
-        
+ 
     }
 };
