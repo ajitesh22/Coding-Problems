@@ -18,7 +18,7 @@ public:
                     count++;
             }   
         }
-        
+            
         int minDays = 0;
         
         while(!queue.empty()){
